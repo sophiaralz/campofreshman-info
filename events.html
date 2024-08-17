@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+    <link rel="stylesheet" href="styles-events.css">
+    <script>
+        function openTab(event, tabName) {
+            let i, tabcontent, tablinks;
+
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+
+            document.getElementById(tabName).style.display = "block";
+            event.currentTarget.className += " active";
+
+            if (tabName === 'EventSurvey') {
+                showSurvey();
+            }
+        }
+
+        function showSurvey() {
+            let selectedEvent = document.querySelector('input[name="event"]:checked');
+            let surveyImg = document.getElementById("surveyImg");
+
+            if (selectedEvent) {
+                surveyImg.src = selectedEvent.getAttribute("data-survey");
+            } else {
+                surveyImg.src = "https://via.placeholder.com/600x400.png?text=Event+Survey";
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById("defaultOpen").click();
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Events</h1>
+        <div class="nav-container">
+        <img src="logo.png" alt="School Logo" class="header-img">
+        <nav>
+            <a href="index.html" class="button">Welcome</a>
+            <a href="classes.html" class="button">Classes</a>
+            <a href="teachers.html" class="button">Teachers</a>
+            <a href="quotes-tips.html" class="button">Quotes/Tips</a>
+        </nav>
+        </div>
+    </header>
+    <div class="content">
+        <div class="tab">
+            <button class="tablinks" onclick="openTab(event, 'EventList')" id="defaultOpen">Event List</button>
+            <button class="tablinks" onclick="openTab(event, 'EventSurvey')">Event Survey</button>
+        </div>
+
+        <div id="EventList" class="tabcontent">
+            <table class="event-table">
+                <thead>
+                    <tr>
+                        <th>Select</th>
+                        <th>Event</th>
+                        <th>Pictures</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="radio" name="event" data-survey="https://via.placeholder.com/600x400.png?text=Homecoming+Survey"></td>
+                        <td>Homecoming</td>
+                        <td><img src="https://via.placeholder.com/100x100.png?text=Homecoming" alt="Homecoming"></td>
+                        <td>A week-long event with a parade, dance, and sports events.</td>
+                    </tr>
+                    <tr>
+                        <td><input type="radio" name="event" data-survey="https://via.placeholder.com/600x400.png?text=Prom+Survey"></td>
+                        <td>Junior Prom</td>
+                        <td><img src="https://via.placeholder.com/100x100.png?text=Prom" alt="Prom"></td>
+                        <td>A formal dance for upperclassmen.</td>
+                    </tr>
+                    <tr>
+                        <td><input type="radio" name="event" data-survey="https://via.placeholder.com/600x400.png?text=Spring+Festival+Survey"></td>
+                        <td>Senior Ball</td>
+                        <td><img src="https://via.placeholder.com/100x100.png?text=Spring+Festival" alt="Spring Festival"></td>
+                        <td>A festival with games, food, and performances.</td>
+                    </tr>
+                    <tr>
+                        <td><input type="radio" name="event" data-survey="https://via.placeholder.com/600x400.png?text=Talent+Show+Survey"></td>
+                        <td>Rallys</td>
+                        <td><img src="https://via.placeholder.com/100x100.png?text=Talent+Show" alt="Talent Show"></td>
+                        <td>An event where students showcase their talents.</td>
+                    </tr>
+                    <tr>
+                        <td><input type="radio" name="event" data-survey="https://via.placeholder.com/600x400.png?text=Sports+Day+Survey"></td>
+                        <td>Football Games</td>
+                        <td><img src="https://via.placeholder.com/100x100.png?text=Sports+Day" alt="Sports Day"></td>
+                        <td>A day dedicated to various sports competitions.</td>
+                    </tr>
+                    <tr>
+                        <td><input type="radio" name="event" data-survey="https://via.placeholder.com/600x400.png?text=Art+Exhibit+Survey"></td>
+                        <td>Field Trips</td>
+                        <td><img src="https://via.placeholder.com/100x100.png?text=Art+Exhibit" alt="Art Exhibit"></td>
+                        <td>An exhibit showcasing student artwork.</td>
+                    </tr>
+                    <tr>
+                        <td><input type="radio" name="event" data-survey="https://via.placeholder.com/600x400.png?text=Drama+Production+Survey"></td>
+                        <td>The Musical</td>
+                        <td><img src="https://via.placeholder.com/100x100.png?text=Drama+Production" alt="Drama Production"></td>
+                        <td>A theatrical performance by students.</td>
+                    </tr>
+                    <tr>
+                        <td><input type="radio" name="event" data-survey="https://via.placeholder.com/600x400.png?text=Graduation+Survey"></td>
+                        <td>Graduation</td>
+                        <td><img src="https://via.placeholder.com/100x100.png?text=Graduation" alt="Graduation"></td>
+                        <td>The commencement ceremony for graduating seniors.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div id="EventSurvey" class="tabcontent">
+            <img id="surveyImg" src="https://via.placeholder.com/600x400.png?text=Event+Survey" alt="Event Survey" class="survey-img">
+        </div>
+    </div>
+</body>
+</html>
+

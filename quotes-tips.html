@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quotes/Tips</title>
+    <link rel="stylesheet" href="styles-quotes.css">
+    <script>
+        function searchQuotes() {
+            let input = document.getElementById('searchInput').value.toLowerCase();
+            let quotes = document.getElementsByClassName('quote-tip');
+
+            for (let i = 0; i < quotes.length; i++) {
+                if (quotes[i].textContent.toLowerCase().includes(input)) {
+                    quotes[i].style.display = '';
+                } else {
+                    quotes[i].style.display = 'none';
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Quotes/Tips</h1>
+        <div class="nav-container">
+        <img src="logo.png" alt="School Logo" class="header-img">
+        <nav>
+            <a href="index.html" class="button">Welcome</a>
+            <a href="classes.html" class="button">Classes</a>
+            <a href="teachers.html" class="button">Teachers</a>
+            <a href="events.html" class="button">Events</a>
+        </nav>
+        </div>
+    </header>
+    <div class="content">
+        <input type="text" id="searchInput" onkeyup="searchQuotes()" placeholder="Search for quotes/tips.." class="search-box">
+        
+
+        <h2>Advice from graduated Class of 2024</h2>
+        <table class="quote-table">
+            <thead>
+                <tr>
+                    <th>Education</th>
+                    <th>Social Life</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="quote-tip">
+                    <td>"Don't fall behind in any classes!"</td>
+                    <td>"Don't be afraid to speak to new people and make new friends. You'll become more outgoing that way."</td>
+                </tr>
+                <tr class="quote-tip">
+                    <td>"Try not to stress too much about grades. Academics are important, but so is having fun!"</td>
+                    <td>"Make new friends- just cause you have the old ones doesn't mean they're going to be the best ones."</td>
+                </tr>
+                <tr class="quote-tip">
+                    <td>"Have an open mind, take advantage of every opportunity, and be kind."</td>
+                    <td>"Go to as many sports games as possible and recover after practice."</td>
+                </tr>
+                <tr class="quote-tip">
+                    <td>"Make sure to stay organized and make a calendar and to-do list system for yourself early on!"</td>
+                    <td>"Participate in senior assassins if you have the chance!"</td>
+                </tr>
+                <tr class="quote-tip">
+                    <td>"Pick classes that actually interest you."</td>
+                    <td>"Take it easy - high school is a marathon, not a sprint. Also, you won't get everything in one go - and that's okay."</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Studying tips</h2>
+        <table class="quote-table">
+            <tbody>
+                <tr class="quote-tip"><td>"Don't procrastinate."</td></tr>
+                <tr class="quote-tip"><td>"DO NOT CRAM. Start studying at least 3 days in advance."</td></tr>
+                <tr class="quote-tip"><td>"Do homework on the day it was assigned. It really frees up time and lightens the stress."</td></tr>
+                <tr class="quote-tip"><td>"Repetition! Review class assignments AND the study guide -> the tests are usually what was talked about in class!"</td></tr>
+                <tr class="quote-tip"><td>"Read your notes out loud."</td></tr>
+                <tr class="quote-tip"><td>"Take small breaks in between to keep your mind engaged and so you don't feel burnt out staring at pages or screens for hours at a time. This does not mean go on social media and never coming back!"</td></tr>
+                <tr class="quote-tip"><td>"Use Quizlet and all the resources your teacher provides!!"</td></tr>
+                <tr class="quote-tip"><td>"Write stuff down, it helps with memorization, especially dates."</td></tr>
+                <tr class="quote-tip"><td>"Take your academy time seriously. Attend your teacher's academies when you need to ask questions or just study."</td></tr>
+                <tr class="quote-tip"><td>"Pop in both headphones and go to the library for a deep study session."</td></tr>
+                <tr class="quote-tip"><td>"Put your phone in a different room so it's not a distraction.</td></tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
+
